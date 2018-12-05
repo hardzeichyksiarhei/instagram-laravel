@@ -1,0 +1,9 @@
+@import "_mixins/font-face";
+
+@include font-face("OpenSansCondensed", "../fonts/OpenSansCondensed/OpenSansCondensed-Light", 300);
+
+@include font-face("FiraSansCondensed", "../fonts/FiraSansCondensed/FiraSansCondensed-Thin", 200);
+@include font-face("FiraSansCondensed", "../fonts/FiraSansCondensed/FiraSansCondensed-Regular");
+@include font-face("FiraSansCondensed", "../fonts/FiraSansCondensed/FiraSansCondensed-Medium", 500);
+
+@include font-face("roboto-example", "../fonts/RobotoBold/RobotoBold", bold);

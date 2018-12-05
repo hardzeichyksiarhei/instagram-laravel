@@ -1,0 +1,191 @@
+@import "vars";
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
+@include media-breakpoint-down(lg) {
+	
+}
+
+// ≥992px
+@include media-breakpoint-down(md) {
+  .navbar-light .navbar-toggler {
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
+  .navbar {
+    &-collapse {
+      flex-direction: column;
+      .navbar-nav {
+        text-align: center;
+        margin-bottom: 10px;
+        .nav-item {
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  .skills-carousel .owl-nav.disabled, .skills-carousel .owl-nav {
+    display: none !important;
+  }
+
+  .instagram {
+    margin: 0 auto;
+    width: 120px !important;
+    margin-top: 50px;
+  }
+}
+
+// ≥768px
+@include media-breakpoint-down(sm) {
+  .card {
+    padding: 20px 30px !important;
+  }
+
+  .tab-options-meta {
+    border: none;
+    padding: 0;
+  }
+  .tab-options-desc {
+    padding: 0;
+  }
+}
+
+// ≥576px
+@include media-breakpoint-down(xs) {
+
+  .price-list-title-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .price-list-title {
+    font-size: 24px;
+    padding: 20px 40px;
+  }
+  
+  .exercise-cheat-section {
+    padding: 50px 0;
+    .card {
+      padding: 30px;
+      .exercise-cheat-info-block {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .form {
+    .col-form-label {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+  }
+
+  .login-section {
+    padding: 50px 0;
+    .card {
+      padding: 30px;
+    }
+    .registration-info {
+      margin-left: 0;
+    }
+  }
+
+  .recharge-section {
+    padding: 50px 0;
+  }
+
+  .withdrawal-funds-section {
+    padding: 50px 0;
+  }
+
+  .account-settings-section {
+    padding: 50px 0;
+  }
+
+  .registration-section {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .navbar {
+    &-info {
+      flex-direction: column;
+      align-items: center;
+      .balans, .logout, .dropdown {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+      .logout {
+        margin: 0;
+      }
+    }
+  }
+  .options-section {
+    padding-top: 60px;
+  }
+  .skills-section {
+    padding-top: 60px;
+  }
+  .contacts-section {
+    margin-top: 60px;
+    .card {
+      flex-direction: column;
+      &__item:first-of-type {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .preview-content .preview-btn-set {
+    .btn:first-of-type {
+      margin: 0;
+      margin-bottom: 20px;
+    }
+  }
+  .nav-tabs-options {
+    .nav-link {
+      width: 130px;
+      .icon {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+  .card {
+    &__title {
+      font-size: 24px;
+    }
+    &__referral {
+      font-size: 12px;
+    }
+  }
+}
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
+@include media-breakpoint-up(sm) {
+
+}
+
+// ≤768px
+@include media-breakpoint-up(md) {
+  .mobile-menu {
+    display: block !important;
+  }
+}
+
+// ≤992px
+@include media-breakpoint-up(lg) {
+
+}
+
+// ≤1200px
+@include media-breakpoint-up(xl) {
+	
+}
