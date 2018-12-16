@@ -20,7 +20,7 @@ class Setting extends Model
     // public $timestamps = false;
     // protected $guarded = ['id'];
     protected $fillable = [
-      'referral_discount', 'nakrutka_api_key', 'paypal_client_id', 'paypal_secret', 'paypal_mode'
+      'referral_discount', 'withdrawal_commission', 'nakrutka_api_key', 'paypal_client_id', 'paypal_secret', 'paypal_mode'
     ];
     // protected $hidden = [];
     // protected $dates = [];

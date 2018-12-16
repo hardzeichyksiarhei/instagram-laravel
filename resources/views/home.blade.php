@@ -13,19 +13,19 @@
       <div class="mask"></div>
       <div class="container">
         <div class="preview-content">
-          <h3 class="preview-suptitle">БЫСТРО, КАЧЕСТВЕННО, С ГАРАНТИЕЙ!</h3>
-          <h1 class="preview-title">Накрутка вcего что угодно в INSTAGRAM</h1>
+          <h3 class="preview-suptitle">{{ __('QUICKLY, QUALITATIVELY, WITH A GUARANTEE!') }}</h3>
+          <h1 class="preview-title">{{ __('Cheating just about everything in INSTAGRAM') }}</h1>
           <div class="preview-btn-set">
             @guest
-              <a href="{{ route('login') }}" class="btn btn--accent">Войти</a>
-              <a href="{{ url('/password/reset') }}" class="btn">Забыли пароль?</a>
+              <a href="{{ route('login') }}" class="btn btn--accent">{{ __('Login') }}</a>
+              <a href="{{ url('/password/reset') }}" class="btn">{{ __('Forgot Your Password?') }}</a>
             @endguest
           </div>
-          <img class="preview-arrow-down" src="{{ asset('assets/img/right-arrow-circular-button.svg') }}" alt="Arrow Down">
+          <a href="#options" rel='m_PageScroll2id'><img class="preview-arrow-down" src="{{ asset('assets/img/right-arrow-circular-button.svg') }}" alt="Arrow Down"></a>
         </div>
       </div>
     </section>
-    <section class="options-section">
+    <section id="options" class="options-section">
       <div class="container">
         <div class="options-content">
           <ul class="nav nav-tabs nav-tabs-options">
@@ -51,7 +51,7 @@
                   <div class="col-md-8">
                     <div class="tab-options-desc">
                       {!! $service->desc !!}
-                      <a href="{{ route('price') }}" class="more">Перейти к полному списку услуг<i class="fas fa-angle-double-right"></i></a>
+                      <a href="{{ route('price') }}" class="more">{{ __('Go to the full list of services') }}<i class="fas fa-angle-double-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -90,7 +90,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h2 class="contacts-title">Наши контакты</h2>
+            <h2 class="contacts-title">{{ __('Our contacts') }}</h2>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -98,11 +98,11 @@
             <div class="card">
               <div class="card__item">
                 <i class="card__icon fas fa-user-tie"></i>
-                <p class="card__desc">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.</p>
+                <p class="card__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, iusto!</p>
               </div>
               <div class="card__item">
                 <i class="card__icon fas fa-user-tie"></i>
-                <p class="card__desc">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.</p>
+                <p class="card__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, pariatur!</p>
               </div>
             </div>
           </div>

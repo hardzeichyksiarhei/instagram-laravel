@@ -3,8 +3,12 @@
   "To order": "Заказать",
   "My orders": "Мои заказы",
   "Price list": "Прайс",
+  "Affiliate program": "Партнерка",
+  "Conclusion": "Вывод",
+  "Payment history": "История платежей",
 
   "Balance": "Баланс",
+  "Link": "Ссылка",
 
   "We accept payments via PayPal": "Мы принимаем платежи через PayPal",
 
@@ -32,10 +36,69 @@
   "Done": "Выполнено",
   "Cancel": "Отменена",
 
+  "Completed": "Готово",
+  "Partial": "Прерван",
+  "Pending": "Принят",
+  "In progress": "Выполняется",
+  "Canceled": "Отменена",
+
   "Payment success": "Платеж прошел успешно",
   "Payment failed": "Платеж не прошел",
 
+  "Exercise cheat": "Осуществление накрутки",
+  "Your balance": "Ваш баланс",
+  "Description of the selected service": "Описание выбранной услуги",
+  "Minimum order": "Минимальный заказ",
+  "Select the service of interest.": "Выберите интересующую услугу.",
+  "Category": "Категория",
+  "Link to account": "Ссылка на аккаунт",
+  "Number of people": "Кол-во человек",
+  "Select a category cheat": "Выберите категорию накрутки",
+  "Select the type of cheating": "Выберите вид накрутки",
+  "Cost": "Стоимость",
+
+  "The number of attracted users": "Количество привлеченных пользователей",
+
+  "All orders": "Все заказы",
+  "Date": "Дата",
+  "Time": "Время",
+  "Status": "Статус",
+
+  "Withdrawal of funds": "Вывод средств",
+  "Choose output method": "Выберите способ вывода",
+  "Enter amount": "Введите сумму",
+  "Your wallet number": "Номер вашего кошелька",
+  "The commission fee is": "Комиссия составляет",
+  "Example": "Пример",
+  "Withdraw": "Вывести",
+
+  "Billing": "Биллинг",
+  "Preliminary balance": "Предварительный баланс",
+  "Payment system": "Платёжная система",
+
+  "Account settings": "Настройки аккаунта",
+  "Change password": "Сменить пароль",
+  "General information": "Общая информация",
+  "Current password": "Текущий пароль",
+  "New password": "Новый пароль",
+  "Your password": "Ваш пароль",
+  "Repeat new password": "Повторите новый пароль",
+
+  "Empty": "Пусто",
+  
+  "Error. Possibly incorrect data.": "Ошибка. Возможно, неверные данные.",
+
   "By making a payment, you agree to the terms of use of the service.": "Выполняя оплату, вы соглашаетесь с условиями использования сервиса.",
+
+  "QUICKLY, QUALITATIVELY, WITH A GUARANTEE!": "БЫСТРО, КАЧЕСТВЕННО, С ГАРАНТИЕЙ!",
+  "Cheating just about everything in INSTAGRAM": "Накрутка вcего что угодно в INSTAGRAM",
+  "Go to the full list of services": "Перейти к полному списку услуг",
+
+  "Our contacts": "Наши контакты",
+
+  "Insufficient funds": "Недостаточно средств",
+  "Your application for withdrawal funds successfully accepted! Wait...": "Ваша заявка на вывод средств успешно принята! Ожидайте...",
+  "Something went wrong!": "Что-то пошло не так!",
 
   "A fresh verification link has been sent to your email address.": "Ссылка на сброс пароля была отправлена на Ваш email-адрес.",
   "All rights reserved.": "Все права защищены.",
@@ -65,7 +128,7 @@
   "Regards": "С уважением",
   "Register": "Регистрация",
   "Remember Me": "Запомнить меня",
-  "Reset Password": "Сбросить пароль",
+  "Reset Password": "Восстановить пароль",
   "Reset Password Notification": "Уведомление сброса пароля",
   "Send Password Reset Link": "Отправить ссылку для сброса пароля",
   "Service Unavailable": "Сервис недоступен",

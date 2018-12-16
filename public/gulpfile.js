@@ -23,11 +23,11 @@ gulp.task('js', function() {
 	return gulp.src([
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/vue/dist/vue.js',
-    'node_modules/select2/dist/js/select2.js',
-    'node_modules/axios/dist/axios.js',
+    'node_modules/axios/dist/axios.min.js',
     'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
     'node_modules/owl.carousel/dist/owl.carousel.min.js',
     'node_modules/lity/dist/lity.min.js',
+    'node_modules/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
 		'assets/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))

@@ -28,7 +28,10 @@
                 <div class="form-group row">
                   <label for="amount" class="col-sm-2 col-form-label">{{ __("Amount") }}</label>
                   <div class="col-sm-10">
-                    <input class="form-control" id="amount" name="amount" placeholder="0">
+                    <input class="form-control{{ $errors->has('amount') ? ' is-invalid' : '' }}" id="amount" name="amount" placeholder="0">
+                    @if ($errors->has('amount'))
+                      <div class="valid-feedback">{{ $errors->first('amount') }}</div>
+                    @endif
                   </div>
                 </div>
                 <div class="form-group row mb-0">

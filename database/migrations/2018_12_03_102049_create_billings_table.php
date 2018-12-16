@@ -16,7 +16,7 @@ class CreateBillingsTable extends Migration
         Schema::create('billings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->decimal('amount', 10, 2)->default(0);
+            $table->decimal('amount', 15, 2)->default(0);
             $table->string('payment_system')->default('');
             $table->string('score')->default('');
             $table->enum('status', ['process', 'done', 'cancel'])->default('process');

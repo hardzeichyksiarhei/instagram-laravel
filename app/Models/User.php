@@ -22,6 +22,7 @@ class User extends Model
     protected $fillable = [
       'email',
       'phone',
+      'balans',
       'password'
     ];
     protected $hidden = [

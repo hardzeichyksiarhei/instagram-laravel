@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<!-- <base href="/"> -->
 
-	<title>Instagram</title>
+	<title>Cheat Like</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +36,7 @@
       <div class="container">
         <div class="top-line-content">
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Яркий и красочный<br>логотип</a>
+            <a class="navbar-brand" href="/"><img src="{{ asset('assets/img/logo.png') }}" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,7 +47,7 @@
                   <a class="nav-link" href="{{ route('account-settings') }}">{{ __('Account') }}</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('referral') }}">Партнерка</a>
+                  <a class="nav-link" href="{{ route('referral') }}">{{ __('Affiliate program') }}</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('exercise-cheat') }}">{{ __('To order') }}</a>
@@ -59,10 +59,13 @@
                   <a class="nav-link" href="{{ route('price') }}">{{ __('Price list') }}</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('withdrawal-funds') }}">Вывод</a>
+                  <a class="nav-link" href="{{ route('withdrawal-funds') }}">{{ __('Conclusion') }}</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('billing') }}">История платежей</a>
+                  <a class="nav-link" href="{{ route('billing') }}">{{ __('Payment history') }}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('recharge') }}">{{ __('Recharge') }}</a>
                 </li>
               </ul>
               @endauth

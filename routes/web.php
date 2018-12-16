@@ -11,19 +11,19 @@
 |
 */
 
-Auth::routes();
+Auth::routes([ 'verify' => true ]);
 
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('setlocale/{locale}', 'LocaleController@index')->name('setlocale');
 
-Route::middleware(['auth'])->group(function () {
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::middleware(['auth', 'verified'])->group(function () {
 
   Route::get('user', function (Request $request) {
     return Auth::user();
   });
-
-  Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
   Route::get('/price-list', 'PriceListController@index')->name('price');
 
@@ -51,7 +51,7 @@ Route::middleware(['auth'])->group(function () {
   })->name('account-settings');
 
   Route::get('/withdrawal-funds', function () {
-    return view('withdrawal-funds');
+    return view('withdrawal-funds', ['withdrawal_commission' => \App\Models\Setting::find(1)->withdrawal_commission]);
   })->name('withdrawal-funds');
 
   Route::get('/billing', 'BillingController@index')->name('billing');

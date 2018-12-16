@@ -6,7 +6,7 @@
     <section class="all-orders-section">
       <div class="container">
         <div class="all-orders-title-wrapper">
-          <h2 class="all-orders-title">Все заказы</h2>
+          <h2 class="all-orders-title">{{ __('All orders') }}</h2>
         </div>
         <!--<div class="table-search">
           <form class="table-search-form" action="">
@@ -18,13 +18,13 @@
             <thead>
               <tr>
                 <th>№</th>
-                <th>Вид накрутки</th>
-                <th>Стоимость</th>
-                <th>Ссылка на аккаунт</th>
-                <th>Дата</th>
-                <th>Время</th>
-                <th>Количество</th>
-                <th>Статус</th>
+                <th>{{ __('View cheat') }}</th>
+                <th>{{ __('Cost') }}</th>
+                <th>{{ __('Link to account') }}</th>
+                <th>{{ __('Date') }}</th>
+                <th>{{ __('Time') }}</th>
+                <th>{{ __('Amount') }}</th>
+                <th>{{ __('Status') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -35,14 +35,14 @@
                     <td>{{ $order->cheat_name }}</td>
                     <td>{{ $order->price }}</td>
                     <td><a href="{{ $order->link }}" target="_blank">{{ $order->link }}</a></td>
-                    <td>19.10.2018</td>
-                    <td>16:27</td>
+                    <td>{{ $order->created_at->format('d.m.Y') }}</td>
+                    <td>{{ $order->created_at->format('H:i') }}</td>
                     <td>{{ $order->count }}</td>
-                    <td><span class="status">{{ $order->status }}</span></td>
+                    <td><span class="status">{{ __($order->status) }}</span></td>
                   </tr>
                 @endforeach
               @else
-                  <tr><td colspan="8">Заказов нет</td></tr>
+                <tr><td colspan="8">{{ __('Empty') }}</td></tr>
               @endif
             </tbody>
           </table>

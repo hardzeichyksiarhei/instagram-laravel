@@ -6,7 +6,7 @@
     <section class="billing-section">
       <div class="container">
         <div class="billing-title-wrapper">
-          <h2 class="billing-title">Биллинг</h2>
+          <h2 class="billing-title">{{ __('Billing') }}</h2>
         </div>
         <!--<div class="table-search">
           <form class="table-search-form" action="">
@@ -18,12 +18,12 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Сумма</th>
-                <th>Предварительный баланс</th>
-                <th>Платёжная система</th>
-                <th>Дата</th>
-                <th>Время</th>
-                <th>Статус</th>
+                <th>{{ __('Amount') }}</th>
+                <th>{{ __('Preliminary balance') }}</th>
+                <th>{{ __('Payment system') }}</th>
+                <th>{{ __('Date') }}</th>
+                <th>{{ __('Time') }}</th>
+                <th>{{ __('Status') }}</th>
               </tr>
             </thead>
             <tbody>

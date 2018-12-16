@@ -17,7 +17,7 @@ class CreateReferralRelationshipsTable extends Migration
             $table->increments('id');
             $table->integer('referral_link_id');
             $table->integer('user_id');
-            $table->decimal('referral_balans', 10, 2)->default(0);
+            $table->decimal('referral_balans', 15, 2)->default(0);
             $table->timestamps();
         });
     }

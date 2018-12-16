@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('cheat_name')->default('');
             $table->string('cheat_order')->default('');
             $table->string('link')->default('');
-            $table->decimal('price', 10, 2)->default(0);
+            $table->decimal('price', 15, 2)->default(0);
             $table->integer('count')->default(0);
             $table->string('status')->default('');
             $table->timestamps();

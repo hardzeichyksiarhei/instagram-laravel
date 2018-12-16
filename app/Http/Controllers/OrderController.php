@@ -24,7 +24,7 @@ class OrderController extends Controller
 
       $status = json_decode($res->getBody());
       
-      if ($status->status !== $item->status) {
+      if ($status->status != $item->status) {
         $item->update([
           'status' => $status->status
         ]);
@@ -43,7 +43,7 @@ class OrderController extends Controller
       'cheat_name' => 'required',
       'cheat_id' => 'required|numeric',
       'count' => 'required|numeric|between:' . $request->min . ',' . $request->max,
-      'link' => 'required|string',
+      'link' => 'required|url',
       'price' => 'required|numeric',
     ], [
       'between' => [
@@ -51,15 +51,19 @@ class OrderController extends Controller
       ]
     ]);
 
-    $client = new Client();
-
-    $api_key = Setting::find(1)->nakrutka_api_key;
-
     $cheat_name = $request->cheat_name;
     $cheat_id = $request->cheat_id;
     $count = $request->count;
     $link = $request->link;
     $price = $request->price;
+
+    if ($request->user()->balans < $price) {
+      return redirect()->back()->with("error", 'Недостаточно средств!');
+    }
+
+    $client = new Client();
+
+    $api_key = Setting::find(1)->nakrutka_api_key;
 
     $res = $client->request('GET', 'https://smm.nakrutka.by/api/?key=' . $api_key . '&action=create&service=' . $cheat_id . '&quantity=' . $count . '&link=' . $link);
 
@@ -67,10 +71,6 @@ class OrderController extends Controller
     
     if (property_exists($response, 'Error')) {
       return redirect()->back()->with("error", $response->Error);
-    }
-
-    if ($request->user()->balans < $price) {
-      return redirect()->back()->with("error", 'Недостаточно средств!');
     }
 
     $order = $response->order;

@@ -10,7 +10,11 @@ class PriceListController extends Controller
 {
     public function index() {
 
-      $priceList = PriceList::where('locale', App::getLocale())->get();
+      $locale = App::getLocale();
+
+      $priceList = PriceList::where('locale', $locale)->get();
+
+      if (!count($priceList)) $priceList = PriceList::where('locale', 'ru')->get();
 
       return view('price-list', ['pricelists' => $priceList]);
     }

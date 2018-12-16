@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-lg-9">
             <div id="exercise-cheat" class="card">
-              <h3 class="card__title">Осуществление накрутки</h3>
+              <h3 class="card__title">{{ __('Exercise cheat') }}</h3>
               <div class="card__body">
                 @if (session('error'))
                   <div class="alert alert-danger">
@@ -24,16 +24,13 @@
                 @endif
                 <div class="row">
                   <div class="col-lg-7">
-                    <form class="form" method="POST" action="{{ route('order') }}">
+                    <form id="order-form" class="form order-form" method="POST" action="{{ route('order') }}">
                       @csrf
                       <div class="form-group row">
-                        <label for="category" class="col-sm-3 col-form-label">Категория</label>
+                        <label for="category" class="col-sm-3 col-form-label">{{ __('Category') }}</label>
                         <div class="col-sm-9">
-                          <!-- <select2 :options="optionsCategoryCheat" v-model="selectedCategoryCheat">
-                            <option disabled value="0">Выберите категорию накрутки</option>
-                          </select2> -->
                           <select class="form-control" v-model="selectedCategoryCheat">
-                            <option value="0" disabled>Выберите категорию накрутки</option>
+                            <option value="0" disabled>{{ __('Select a category cheat') }}</option>
                             <option v-for="category in optionsCategoryCheat" :value="category.id">
                               @{{ category.name }}
                             </option>
@@ -41,10 +38,10 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="category" class="col-sm-3 col-form-label">Вид накрутки</label>
+                        <label for="category" class="col-sm-3 col-form-label">{{ __('View cheat') }}</label>
                         <div class="col-sm-9">
-                          <select class="form-control" v-model="selectedViewCheat">
-                            <option value="0" disabled>Выберите вид накрутки</option>
+                          <select class="form-control" v-model="selectedViewCheat" :disabled="!optionsViewCheat.length">
+                            <option value="0" disabled>{{ __('Select the type of cheating') }}</option>
                             <option v-for="view in optionsViewCheat" :value="view">
                               @{{ view.name }}
                             </option>
@@ -57,16 +54,16 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="link" class="col-sm-3 col-form-label">Ссылка на аккаунт</label>
+                        <label for="link" class="col-sm-3 col-form-label">{{ __('Link to account') }}</label>
                         <div class="col-sm-9">
-                          <input class="form-control{{ $errors->has('link') ? ' is-invalid' : '' }}" id="link" placeholder="Ссылка" name="link" v-model="link">
+                          <input class="form-control{{ $errors->has('link') ? ' is-invalid' : '' }}" id="link" placeholder="{{ __('Link') }}" name="link" v-model="link">
                           @if ($errors->has('link'))
                             <div class="valid-feedback">{{ $errors->first('link') }}</div>
                           @endif
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="count-people" class="col-sm-3 col-form-label">Кол-во человек</label>
+                        <label for="count-people" class="col-sm-3 col-form-label">{{ __('Number of people') }}</label>
                         <div class="col-sm-9">
                           <input type="number" class="form-control{{ $errors->has('count') ? ' is-invalid' : '' }}" id="count-people" placeholder="0" name="count" v-model="count">
                           @if ($errors->has('count'))
@@ -77,8 +74,8 @@
                       </div>
                       <div class="form-group row">
                         <div class="col-lg-9 offset-lg-3 d-flex align-items-center">
-                          <button type="submit" class="btn btn--accent">Заказать</button>
-                          <span class="curent-price"><span class="text-accent-2">Стоимость:&nbsp;</span>@{{ price }} Р</span>
+                          <button type="submit" class="btn btn--accent">{{ __('To order') }}</button>
+                          <span class="curent-price"><span class="text-accent-2">{{ __('Cost') }}:&nbsp;</span>@{{ price }} Р</span>
                         </div>
                       </div>
                       <input type="hidden" class="form-control" name="min" v-model="min">
@@ -87,13 +84,13 @@
                   </div>
                   <div class="col-lg-5">
                     <div class="exercise-cheat-info-block">
-                      <span class="current-balance"><span class="text-accent-2">Ваш баланс:&nbsp;</span>{{ Auth::user()->balans }} Р</span>
+                      <span class="current-balance"><span class="text-accent-2">{{ __('Your balance') }}:&nbsp;</span>{{ Auth::user()->balans }} Р</span>
                       <div class="desc-service">
-                        <span class="text-accent-2">Описание выбранной услуги:</span>
-                        <span>Минимальный заказ: @{{ min }}</span>
-                        <span>Максимум: @{{ max }}</span>
+                        <span class="text-accent-2">{{ __('Description of the selected service') }}:</span>
+                        <span>{{ __('Minimum order') }}: @{{ min }}</span>
+                        <span>{{ __('Maximum') }}: @{{ max }}</span>
                         <p v-if="description">@{{ description }}</p>
-                        <span v-else>Выберите интересующую услугу.</span>
+                        <span v-else>{{ __('Select the service of interest.') }}</span>
                       </div>
                     </div>
                   </div>

@@ -24,12 +24,12 @@ body {
 	input, textarea {
 		border: #666 1px solid;
 		outline: none;
-		&:focus:required:invalid {
+		/*&:focus:required:invalid {
 			border-color: red;
 		}
 		&:required:valid {
 			border-color: green;
-		}
+		}*/
 	}
 }
 
@@ -162,6 +162,11 @@ b, strong {
   padding: 8px 16px;
   color: #000;
   cursor: pointer;
+  &[disabled] {
+    background-color: grey;
+    border-color: grey;
+    cursor: not-allowed;
+  }
   &:hover {
     text-decoration: none;
     color: #000;
@@ -215,16 +220,27 @@ b, strong {
         color: #aaa;
       }
     }
+    &[disabled] {
+      cursor: not-allowed;
+      background-color: rgba(#b7b7b7, .3);
+    }
     &.is-valid {
       & + .valid-feedback {
         color: #357E1B;
+        font-weight: 600;
+        font-size: 14px;
       }
     }
     &.is-invalid {
       & + .valid-feedback {
         color: #C3267B;
+        font-weight: 600;
+        font-size: 14px;
       }
     }
+  }
+  select {
+    cursor: pointer;
   }
   .valid-feedback {
     font-size: 13px;
@@ -871,6 +887,15 @@ main.billing {
   }
 }
 
+/* Verified Page */
+
+.verified-section {
+  padding: 130px 0;
+  .card {
+    padding: 48px 58px;
+  }
+}
+
 /* Withdrawal Funds Page */
 
 .withdrawal-funds-section {
@@ -923,6 +948,18 @@ main.billing {
   margin: 0;
   padding: 0;
   margin-top: 20px;
+  &.is-invalid {
+    .withdrawal-funds-item {
+      margin-bottom: 0;
+    }
+    & + .valid-feedback {
+      color: #C3267B;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 0;
+    }
+  }
 }
 
 .withdrawal-funds-item {
@@ -932,6 +969,7 @@ main.billing {
     &:checked {
       & + label {
         border-color: #357E1B;
+        border-width: 2px;
       }
     }
   }
@@ -982,6 +1020,13 @@ main.billing {
     .btn {
       min-width: 100px;
     }
+  }
+}
+
+.password-reset-section {
+  padding: 130px 0;
+  .card {
+    padding: 48px 58px;
   }
 }
 

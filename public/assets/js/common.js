@@ -2,6 +2,16 @@ $(function() {
 
   // Custom JS
 
+  $("#order-form").on('submit', function () {
+    $(this).find('button[type=submit]')
+    .prop('disabled', true);
+  });
+
+  $("a[rel='m_PageScroll2id']").mPageScroll2id({
+    scrollSpeed: 300,
+    scrollEasing: 'linear'
+  });
+
   $('#preview-carousel').owlCarousel({
     loop: true,
     margin: 0,
@@ -18,6 +28,8 @@ $(function() {
     margin: 50,
     nav: true,
     dots: false,
+    autoplay: true,
+    autoplayTimeout: 3000,
     navText: [
       '<img src="assets/img/left-arrow.svg" alt="Right Arrow">',
       '<img src="assets/img/right-arrow.svg" alt="Left Arrow">'
@@ -45,7 +57,7 @@ const exerciseCheat = new Vue({
     selectedCategoryCheat: 0,
     optionsCategoryCheat: [],
     selectedViewCheat: 0,
-    optionsViewCheat: {},
+    optionsViewCheat: [],
     description: '',
     min: 0,
     max: 0,
@@ -99,12 +111,9 @@ const exerciseCheat = new Vue({
   },
 
   created () {
-    axios.get('/cheat-category').then((response) => {
+    if (document.getElementById('exercise-cheat') === null) return false;
 
-      /*this.optionsCategoryCheat = response.data.map((obj) => {
-        obj.text = obj.text || obj.name;
-        return obj;
-      });*/
+    axios.get('/cheat-category').then((response) => {
 
       this.optionsCategoryCheat = response.data;
 
@@ -115,6 +124,6 @@ const exerciseCheat = new Vue({
 
 })
 
-if (document.getElementById('exercise-cheat') != null) {
+if (document.getElementById('exercise-cheat') !== null) {
   exerciseCheat.$mount('#exercise-cheat');
 }

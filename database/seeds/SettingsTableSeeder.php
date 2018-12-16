@@ -10,8 +10,6 @@ class SettingsTableSeeder extends Seeder
 {
     public function run()
     {
-      Setting::create([
-        'referral_discount' => 5.00
-      ]);
+      Setting::create([]);
     }
 }

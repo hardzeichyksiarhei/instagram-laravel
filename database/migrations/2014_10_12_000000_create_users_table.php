@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('phone')->default('');
             $table->boolean('is_admin')->default(0);
-            $table->decimal('balans', 10, 2)->default(0);
+            $table->decimal('balans', 15, 2)->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

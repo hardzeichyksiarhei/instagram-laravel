@@ -12,11 +12,11 @@ return [
     */
 
     // Project name. Shown in the breadcrumbs and a few other places.
-    'project_name' => 'Backpack',
+    'project_name' => 'CheatLike',
 
     // Menu logos
-    'logo_lg'   => '<b>Insta</b>gram',
-    'logo_mini' => '<b>I</b>n',
+    'logo_lg'   => '<b>Cheat</b>Like',
+    'logo_mini' => '<b>C</b>L',
 
     // Developer or company name. Shown in footer.
     'developer_name' => 'Гардейчик Сергей',

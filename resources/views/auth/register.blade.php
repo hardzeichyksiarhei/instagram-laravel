@@ -15,7 +15,10 @@
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <input class="form-control" id="phone" name="phone" placeholder="{{ __('Phone') }}" value="{{ old('phone') }}">
+                      <input class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" id="phone" name="phone" placeholder="{{ __('Phone') }}" value="{{ old('phone') }}">
+                      @if ($errors->has('phone'))
+                        <div class="valid-feedback">{{ $errors->first('phone') }}</div>
+                      @endif
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" id="password" name="password" placeholder="{{ __('Password') }}" value="{{ old('password') }}">

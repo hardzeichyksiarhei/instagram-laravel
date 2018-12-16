@@ -15,7 +15,7 @@ class BillingController extends Controller
   {
     $validatedData = $request->validate([
       'payment_system' => 'required',
-      'amount' => 'required|numeric',
+      'amount' => 'required|numeric|min:1000',
       'score' => 'required'
     ]);
 
@@ -23,7 +23,7 @@ class BillingController extends Controller
 
     if ($user->balans - $request->get('amount') < 0) {
         // The passwords matches
-        return redirect()->back()->with("error","Insufficient funds");
+        return redirect()->back()->with("error", __('Insufficient funds'));
     }
 
     $user->balans = $user->balans - $request->get('amount');
@@ -36,8 +36,8 @@ class BillingController extends Controller
     ]);
 
     if ($billing)
-      return redirect()->back()->with("success","Your application for withdrawal funds successfully accepted! Wait ...");
+      return redirect()->back()->with("success", __('Your application for withdrawal funds successfully accepted! Wait...'));
     else
-      return redirect()->back()->with("error","Something went wrong!");
+      return redirect()->back()->with("error", __('Something went wrong!'));
   }
 }
